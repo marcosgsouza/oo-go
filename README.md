@@ -1,7 +1,6 @@
 # Go: Orientação a Objetos
 
 ## Aulas
----
 
 - Minha primeira struct
 - Referência, ponteiro e métodos
