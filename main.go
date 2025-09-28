@@ -10,7 +10,8 @@ func main() {
 	// aulaUm()
 	// aulaDois()
 	//aulaTres()
-	aulaQuatro()
+	//aulaQuatro()
+	aulaCinco()
 }
 
 // func aulaUm() {
@@ -88,4 +89,27 @@ func aulaQuatro() {
 	contaDoBruno.Depositar(1000)
 
 	fmt.Println(contaDoBruno)
+}
+
+type verificaConta interface {
+	Sacar(valor float64) string
+}
+
+func aulaCinco() {
+
+	contaDoDenis := contas.ContaPoupanca{}
+	contaDoDenis.Depositar(100)
+	pagarBoleto(&contaDoDenis, 60)
+
+	fmt.Println(contaDoDenis.Obtersaldo())
+
+	contaDoMarcos := contas.ContaCorrente{}
+	contaDoMarcos.Depositar(10000)
+	pagarBoleto(&contaDoMarcos, 500)
+
+	fmt.Println(contaDoMarcos.Obtersaldo())
+}
+
+func pagarBoleto(conta verificaConta, valorBoleto float64) {
+	conta.Sacar(valorBoleto)
 }
